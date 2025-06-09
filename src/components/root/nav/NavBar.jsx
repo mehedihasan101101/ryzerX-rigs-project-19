@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { IoIosMenu } from "react-icons/io";
@@ -21,7 +21,7 @@ const NavBar = () => {
         { id: 3, path: "/Dashboard", name: "Dashboard" },
     ]
     return (
-        <nav className=" pt-5 pb-5 bg-amber-200">
+        <nav className=" pt-5 pb-5 bg-transparent">
 
             <div className="lg:max-w-[90%] m-auto flex justify-between items-center">
                 <div className="lg:hidden">
@@ -34,17 +34,17 @@ const NavBar = () => {
                 <h1 className="font-extrabold text-xl ">RyzerX</h1>
                 <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[30%] top-18 h-screen bg-amber-200 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent ">
-                        {navFields.map((field) => <NavLink key={field.id} to={field.path}><li>{field.name}</li></NavLink>)}
+                        {navFields.map((field) => <NavLink key={field.id} to={field.path} className={" rounded hover:bg-neutral-200 px-3 py-2"}><li>{field.name}</li></NavLink>)}
                     </ul>
                 </div>
-                <div className="flex gap-3">
-                    <div className="shadow p-1 rounded-full" >
+                <div className="flex  gap-3">
+                    <button className="btn indicator btn-circle" >
                         <AiOutlineShoppingCart className="text-2xl"></AiOutlineShoppingCart>
-                    </div>
-                    <div className="shadow p-1 rounded-full">
-                        <CiHeart className="text-2xl"></CiHeart>
-                    </div>
-
+                        <span className="badge badge-sm indicator-item">8</span>
+                    </button>
+                    <button className="  btn btn-circle">
+                        <CiHeart className="text-2xl font-extrabold "></CiHeart>
+                    </button>
                 </div>
 
             </div>
