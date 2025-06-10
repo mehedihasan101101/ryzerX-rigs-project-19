@@ -26,9 +26,9 @@ const NavBar = () => {
     ]
     return (
         // Main navigation bar
-        <nav className=" pt-5 pb-5 bg-transparent pr-2 lg:p-auto">
+        <nav className=" lg:py-7 py-5  bg-transparent pr-2  mt-7">
 
-            <div className="lg:max-w-[90%] m-auto flex justify-between items-center">
+            <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-6">
                 {/* Mobile Menu Toggle Icon */}
                 <div className="lg:hidden">
 
@@ -40,9 +40,9 @@ const NavBar = () => {
                 {/* Website Main LOGO */}
                 <h1 className="font-extrabold text-xl ">RyzerX</h1>
                 {/* Navigation Links */}
-                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[30%] top-15 h-screen  bg-neutral-100 lg:bg-transparent   absolute `}>
+                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[45%] top-23 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
-                        {navFields.map((field) => <NavLink key={field.id} to={field.path} className={"rounded hover:bg-neutral-200 px-3 py-2"}><li className="pl-5 lg:pl-0">{field.name}</li></NavLink>)}
+                        {navFields.map((field) => <NavLink key={field.id} to={field.path} className={"rounded hover:bg-neutral-200 px-3 py-2"}><li className="pl-14 lg:pl-0">{field.name}</li></NavLink>)}
                     </ul>
                 </div>
 
