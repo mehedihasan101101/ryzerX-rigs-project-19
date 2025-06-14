@@ -1,34 +1,42 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from './components/root/Root';
-import Home from './components/Home/Home';
+import Home from './components/home/Home';
 import Statistics from './components/statistics/Statistics';
 import Dashboard from './components/dashboard/Dashboard';
 import AboutUs from './components/about/AboutUs';
+import Allproduct from './components/categories/Allproduct';
 
 
 const router = createBrowserRouter([
   {
     path: "",
     element: <Root></Root>,
-    children:[
+    children: [
       {
-        path:"",
-        element:<Home></Home>
+        path: "",
+        element: <Home></Home>,
+        children: [
+          {
+            path: "category/:categoryname",
+            element: <Allproduct></Allproduct>,
+            loader:({params})=>(console.log(params.categoryname))
+          }
+        ]
       },
       {
-        path:"statistics",
-        element:<Statistics></Statistics>
+        path: "statistics",
+        element: <Statistics></Statistics>
       },
       {
-        path:"dashboard",
-        element:<Dashboard></Dashboard>
+        path: "dashboard",
+        element: <Dashboard></Dashboard>
       },
       {
-        path:"aboutus",
-        element:<AboutUs></AboutUs>
+        path: "aboutus",
+        element: <AboutUs></AboutUs>
       }
     ]
   }

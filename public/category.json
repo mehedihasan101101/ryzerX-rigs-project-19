@@ -1,0 +1,37 @@
+[
+  {
+    "id": 0,
+    "name": "All",
+    "link": "category/all"
+  },
+  {
+    "id": 1,
+    "name": "Laptop",
+    "link": "category/laptop"
+  },
+  {
+    "id": 2,
+    "name": "Desktop",
+    "link": "category/desktop"
+  },
+  {
+    "id": 3,
+    "name": "Monitor",
+    "link": "category/monitor"
+  },
+  {
+    "id": 4,
+    "name": "GPU",
+    "link": "category/gpu"
+  },
+  {
+    "id": 5,
+    "name": "RAM",
+    "link": "category/ram"
+  },
+  {
+    "id": 6,
+    "name": "Motherboard",
+    "link": "category/motherboard"
+  }
+]
