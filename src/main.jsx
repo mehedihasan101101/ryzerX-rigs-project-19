@@ -1,4 +1,4 @@
-import { StrictMode, useEffect } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -7,7 +7,11 @@ import Home from './components/home/Home';
 import Statistics from './components/statistics/Statistics';
 import Dashboard from './components/dashboard/Dashboard';
 import AboutUs from './components/about/AboutUs';
-import Allproduct from './components/categories/Allproduct';
+import ProductArchive from './components/productArchive/ProductArchive';
+import { handleApiData } from './utilities/handleApiData';
+
+
+
 
 
 const router = createBrowserRouter([
@@ -21,8 +25,8 @@ const router = createBrowserRouter([
         children: [
           {
             path: "category/:categoryname",
-            element: <Allproduct></Allproduct>,
-            loader:({params})=>(console.log(params.categoryname))
+            element: <ProductArchive></ProductArchive>,
+            loader: handleApiData,
           }
         ]
       },

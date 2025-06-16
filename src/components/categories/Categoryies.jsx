@@ -13,9 +13,9 @@ const Categoryies = () => {
 
     return (
         <div>
-               <ul>
-                    {categories.map(category=><Link to={category.link}><li>{category.name}</li></Link>)}
-                </ul>   
+            <ul>
+                {categories.map(category => <Link to={category.link}><li>{category.name}</li></Link>)}
+            </ul>
         </div>
     );
 };
