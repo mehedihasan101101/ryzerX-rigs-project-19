@@ -38,7 +38,7 @@ const NavBar = () => {
 
                 </div>
                 {/* Website Main LOGO */}
-                <h1 className="font-extrabold text-xl ">RyzerX</h1>
+                <h1 className="font-extrabold text-xl text-black ">RyzerX</h1>
                 {/* Navigation Links */}
                 <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[45%] top-23 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
@@ -50,8 +50,8 @@ const NavBar = () => {
                     {/* Add to Cart button */}
                     <button onClick={() => { setCartTab(!CartTab); setwishListTab(false) }} className="btn indicator btn-circle" >
 
-                        <AiOutlineShoppingCart className="text-2xl"></AiOutlineShoppingCart>
-                        <span className="badge badge-sm indicator-item">8</span>
+                        <AiOutlineShoppingCart className="text-2xl text-black"></AiOutlineShoppingCart>
+                        <span className="badge badge-sm indicator-item text-black">8</span>
                         {/* cart Tab which shown  only when  cart icon is clicked */}
                         <div className={`shadow absolute top-15 w-[300px] right-0 h-15 ${CartTab ? "" : "hidden"}`}>
                             <h1>Total Price: 300$</h1>
@@ -60,8 +60,8 @@ const NavBar = () => {
 
                     {/* Wishlist Button */}
                     <button onClick={() => { setwishListTab(!wishListTab); setCartTab(false) }} className="btn indicator btn-circle" >
-                        <CiHeart className="text-2xl"></CiHeart>
-                        <span className="badge badge-sm indicator-item">8</span>
+                        <CiHeart className="text-2xl text-black"></CiHeart>
+                        <span className="badge badge-sm indicator-item text-black">8</span>
 
                         {/* WishList Tab which shown only when cart icon is clicked */}
                         <div className={`shadow absolute top-15 w-[300px] right-0 h-15 ${wishListTab ? "" : "hidden"}`}>

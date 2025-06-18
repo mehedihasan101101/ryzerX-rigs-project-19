@@ -2,7 +2,7 @@
     {
         "product_id": "LAP-001",
         "product_title": "Dell XPS 13",
-        "product_image": "/images/laptop_1.jpg",
+        "product_image": "/productimg/dellxps13.png",
         "category": "Laptop",
         "price": 999.99,
         "description": "Compact and powerful ultrabook with a stunning display.",
@@ -17,8 +17,8 @@
     },
     {
         "product_id": "LAP-002",
-        "product_title": "MacBook Pro 14\"",
-        "product_image": "/images/laptop_2.jpg",
+        "product_title": "MacBook Pro 14",
+        "product_image": "/productimg/laptop2.webp",
         "category": "Laptop",
         "price": 1999.99,
         "description": "Apple's M1 Pro chip delivers powerful performance and great battery life.",
@@ -34,7 +34,7 @@
     {
         "product_id": "LAP-003",
         "product_title": "HP Spectre x360",
-        "product_image": "/images/laptop_3.jpg",
+        "product_image": "/productimg/laptop3.webp",
         "category": "Laptop",
         "price": 1199.99,
         "description": "Convertible laptop with touchscreen and long battery life.",
@@ -50,7 +50,7 @@
     {
         "product_id": "LAP-004",
         "product_title": "Lenovo ThinkPad X1 Carbon",
-        "product_image": "/images/laptop_4.jpg",
+        "product_image": "/productimg/laptop4.jpg",
         "category": "Laptop",
         "price": 1299.99,
         "description": "Business-class ultrabook with excellent keyboard and build quality.",
@@ -66,7 +66,7 @@
     {
         "product_id": "LAP-005",
         "product_title": "ASUS ROG Zephyrus G14",
-        "product_image": "/images/laptop_5.jpg",
+        "product_image": "/productimg/laptop5.jpg",
         "category": "Laptop",
         "price": 1499.99,
         "description": "Powerful gaming laptop with AMD Ryzen and RTX graphics.",
@@ -82,7 +82,7 @@
     {
         "product_id": "LAP-006",
         "product_title": "Acer Swift 3",
-        "product_image": "/images/laptop_6.jpg",
+        "product_image": "/productimg/laptop6.webp",
         "category": "Laptop",
         "price": 699.99,
         "description": "Affordable ultrabook with good battery life and portability.",

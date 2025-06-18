@@ -14,10 +14,10 @@ const Categoryies = () => {
     return (
         <>
             <div className="">
-                <div className="bg-gray-300  px-9 py-7 rounded-xl ">
+                <div className="bg-gray-200  px-9 py-7 rounded-xl ">
                     <ul className="">
-                        {categories.map(category => <NavLink className={({ isActive }) => `mt-5 py-2 px-3 rounded-full  text-center  block
-                         ${isActive ? "  bg-neutral-300" : "bg-white hover:"}`} to={category.link}>{category.name}</NavLink>)}
+                        {categories.map(category => <NavLink className={({ isActive }) => `mt-5 py-2 px-3 rounded-full  text-center  block text-black font-bol
+                         ${isActive ? "  text-white bg-black " : "bg-white hover:bg-neutral-100"}`} to={category.link}>{category.name}</NavLink>)}
                     </ul>
                 </div>
             </div>
