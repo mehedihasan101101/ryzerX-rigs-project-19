@@ -18,7 +18,7 @@
     {
         "product_id": "LAP-002",
         "product_title": "MacBook Pro 14",
-        "product_image": "/productimg/laptop2.webp",
+        "product_image": "/productimg/laptop2.png",
         "category": "Laptop",
         "price": 1999.99,
         "description": "Apple's M1 Pro chip delivers powerful performance and great battery life.",
@@ -34,7 +34,7 @@
     {
         "product_id": "LAP-003",
         "product_title": "HP Spectre x360",
-        "product_image": "/productimg/laptop3.webp",
+        "product_image": "/productimg/laptop3.png",
         "category": "Laptop",
         "price": 1199.99,
         "description": "Convertible laptop with touchscreen and long battery life.",
@@ -50,7 +50,7 @@
     {
         "product_id": "LAP-004",
         "product_title": "Lenovo ThinkPad X1 Carbon",
-        "product_image": "/productimg/laptop4.jpg",
+        "product_image": "/productimg/laptop4.avif",
         "category": "Laptop",
         "price": 1299.99,
         "description": "Business-class ultrabook with excellent keyboard and build quality.",
@@ -66,7 +66,7 @@
     {
         "product_id": "LAP-005",
         "product_title": "ASUS ROG Zephyrus G14",
-        "product_image": "/productimg/laptop5.jpg",
+        "product_image": "/productimg/laptop5.png",
         "category": "Laptop",
         "price": 1499.99,
         "description": "Powerful gaming laptop with AMD Ryzen and RTX graphics.",
@@ -82,7 +82,7 @@
     {
         "product_id": "LAP-006",
         "product_title": "Acer Swift 3",
-        "product_image": "/productimg/laptop6.webp",
+        "product_image": "/productimg/laptop6.png",
         "category": "Laptop",
         "price": 699.99,
         "description": "Affordable ultrabook with good battery life and portability.",
@@ -98,7 +98,7 @@
     {
         "product_id": "DESK-001",
         "product_title": "HP Pavilion Gaming Desktop",
-        "product_image": "/images/desktop_1.jpg",
+        "product_image": "/productimg/desktop1.webp",
         "category": "Desktop",
         "price": 799.99,
         "description": "Affordable gaming desktop with good performance.",
@@ -114,7 +114,7 @@
     {
         "product_id": "DESK-002",
         "product_title": "Dell Inspiron Desktop",
-        "product_image": "/images/desktop_2.jpg",
+        "product_image": "/productimg/desktop2.webp",
         "category": "Desktop",
         "price": 649.99,
         "description": "Reliable desktop for everyday tasks and office use.",
@@ -130,7 +130,7 @@
     {
         "product_id": "DESK-003",
         "product_title": "Apple iMac 24\"",
-        "product_image": "/images/desktop_3.jpg",
+        "product_image": "/productimg/desktop3.png",
         "category": "Desktop",
         "price": 1299.99,
         "description": "All-in-one desktop with stunning 4.5K Retina display.",
@@ -146,7 +146,7 @@
     {
         "product_id": "DESK-004",
         "product_title": "Lenovo IdeaCentre 5",
-        "product_image": "/images/desktop_4.jpg",
+        "product_image": "/productimg/desktop4.avif",
         "category": "Desktop",
         "price": 749.99,
         "description": "Powerful desktop for multimedia and productivity.",
@@ -162,7 +162,7 @@
     {
         "product_id": "DESK-005",
         "product_title": "CyberPowerPC Gamer Xtreme",
-        "product_image": "/images/desktop_5.jpg",
+        "product_image": "/productimg/desktop5.png",
         "category": "Desktop",
         "price": 999.99,
         "description": "High-performance gaming desktop with latest components.",
@@ -178,7 +178,7 @@
     {
         "product_id": "DESK-006",
         "product_title": "Acer Aspire TC",
-        "product_image": "/images/desktop_6.jpg",
+        "product_image": "/productimg/desktop6.png",
         "category": "Desktop",
         "price": 549.99,
         "description": "Budget-friendly desktop for home and office use.",
@@ -194,7 +194,7 @@
     {
         "product_id": "MON-001",
         "product_title": "Samsung 27-Inch Curved Monitor",
-        "product_image": "/images/monitor_1.jpg",
+        "product_image": "/productimg/monitor1.webp",
         "category": "Monitor",
         "price": 249.99,
         "description": "Immersive curved screen for gaming and productivity.",
@@ -210,7 +210,7 @@
     {
         "product_id": "MON-002",
         "product_title": "LG UltraFine 4K",
-        "product_image": "/images/monitor_2.jpg",
+        "product_image": "/productimg/monitor2.webp",
         "category": "Monitor",
         "price": 499.00,
         "description": "Stunning 4K display ideal for creative professionals.",
@@ -226,7 +226,7 @@
     {
         "product_id": "MON-003",
         "product_title": "Dell UltraSharp 24",
-        "product_image": "/images/monitor_3.jpg",
+        "product_image": "/productimg/monitor3.avif",
         "category": "Monitor",
         "price": 299.99,
         "description": "Reliable 24-inch monitor with excellent color accuracy.",
@@ -241,8 +241,8 @@
     },
     {
         "product_id": "MON-004",
-        "product_title": "ASUS TUF Gaming 27\"",
-        "product_image": "/images/monitor_4.jpg",
+        "product_title": "ASUS TUF Gaming 27",
+        "product_image": "/productimg/monitor4.png",
         "category": "Monitor",
         "price": 329.99,
         "description": "Gaming monitor with fast refresh rate and low response time.",
@@ -256,41 +256,9 @@
         "rating": 4.7
     },
     {
-        "product_id": "MON-005",
-        "product_title": "BenQ PD2700U",
-        "product_image": "/images/monitor_5.jpg",
-        "category": "Monitor",
-        "price": 449.99,
-        "description": "Professional 27-inch 4K monitor for designers.",
-        "Specification": [
-            "3840x2160",
-            "IPS Panel",
-            "HDR10",
-            "USB-C"
-        ],
-        "availability": true,
-        "rating": 4.6
-    },
-    {
-        "product_id": "MON-006",
-        "product_title": "Acer Nitro 24\"",
-        "product_image": "/images/monitor_6.jpg",
-        "category": "Monitor",
-        "price": 219.99,
-        "description": "Budget gaming monitor with good performance.",
-        "Specification": [
-            "1920x1080",
-            "144Hz",
-            "1ms Response",
-            "FreeSync"
-        ],
-        "availability": true,
-        "rating": 4.4
-    },
-    {
         "product_id": "GPU-001",
         "product_title": "NVIDIA GeForce RTX 4070",
-        "product_image": "/images/gpu_1.jpg",
+        "product_image": "/productimg/gpu1.png",
         "category": "Gpu",
         "price": 599.99,
         "description": "Next-gen graphics performance for 4K gaming.",
@@ -305,7 +273,7 @@
     {
         "product_id": "GPU-002",
         "product_title": "AMD Radeon RX 6800 XT",
-        "product_image": "/images/gpu_2.jpg",
+        "product_image": "/productimg/gpu2.png",
         "category": "Gpu",
         "price": 549.99,
         "description": "Powerful GPU for high-performance gaming.",
@@ -320,7 +288,7 @@
     {
         "product_id": "GPU-003",
         "product_title": "NVIDIA GeForce RTX 3060 Ti",
-        "product_image": "/images/gpu_3.jpg",
+        "product_image": "/productimg/gpu3.png",
         "category": "Gpu",
         "price": 399.99,
         "description": "Great value GPU for 1440p gaming.",
@@ -335,7 +303,7 @@
     {
         "product_id": "GPU-004",
         "product_title": "AMD Radeon RX 6700 XT",
-        "product_image": "/images/gpu_4.jpg",
+        "product_image": "/productimg/gpu4.png",
         "category": "Gpu",
         "price": 379.99,
         "description": "Strong performance for 1440p gaming.",
@@ -350,7 +318,7 @@
     {
         "product_id": "GPU-005",
         "product_title": "NVIDIA GeForce GTX 1660 Super",
-        "product_image": "/images/gpu_5.jpg",
+        "product_image": "/productimg/gpu5.png",
         "category": "Gpu",
         "price": 249.99,
         "description": "Affordable GPU for 1080p gaming.",
@@ -364,7 +332,7 @@
     {
         "product_id": "GPU-006",
         "product_title": "AMD Radeon RX 6600",
-        "product_image": "/images/gpu_6.jpg",
+        "product_image": "/productimg/gpu6.png",
         "category": "Gpu",
         "price": 229.99,
         "description": "Entry-level GPU for casual gamers.",
@@ -378,7 +346,7 @@
     {
         "product_id": "RAM-001",
         "product_title": "Corsair Vengeance LPX 16GB",
-        "product_image": "/images/ram_1.jpg",
+        "product_image": "/productimg/ram1.avif",
         "category": "Ram",
         "price": 79.99,
         "description": "Reliable DDR4 memory for gaming and productivity.",
@@ -393,7 +361,7 @@
     {
         "product_id": "RAM-002",
         "product_title": "G.Skill Ripjaws V 16GB",
-        "product_image": "/images/ram_2.jpg",
+        "product_image": "/productimg/ram2.webp",
         "category": "Ram",
         "price": 74.99,
         "description": "High-performance DDR4 RAM with great timings.",
@@ -408,7 +376,7 @@
     {
         "product_id": "RAM-003",
         "product_title": "Kingston HyperX Fury 16GB",
-        "product_image": "/images/ram_3.jpg",
+        "product_image": "/productimg/ram3.webp",
         "category": "Ram",
         "price": 72.99,
         "description": "Affordable DDR4 memory with stylish heat spreaders.",
@@ -423,7 +391,7 @@
     {
         "product_id": "RAM-004",
         "product_title": "Crucial Ballistix 32GB",
-        "product_image": "/images/ram_4.jpg",
+        "product_image": "/productimg/ram4.png",
         "category": "Ram",
         "price": 139.99,
         "description": "High-capacity memory kit for demanding users.",
@@ -438,7 +406,7 @@
     {
         "product_id": "RAM-005",
         "product_title": "TeamGroup T-Force Delta RGB 16GB",
-        "product_image": "/images/ram_5.jpg",
+        "product_image": "/productimg/ram5.webp",
         "category": "Ram",
         "price": 89.99,
         "description": "DDR4 RAM with customizable RGB lighting.",
@@ -453,7 +421,7 @@
     {
         "product_id": "RAM-006",
         "product_title": "Patriot Viper Steel 16GB",
-        "product_image": "/images/ram_6.jpg",
+        "product_image": "/productimg/ram6.webp",
         "category": "Ram",
         "price": 79.99,
         "description": "Performance memory for gamers and enthusiasts.",
@@ -468,7 +436,7 @@
     {
         "product_id": "MB-001",
         "product_title": "ASUS ROG Strix Z790-E",
-        "product_image": "/images/motherboard_1.jpg",
+        "product_image": "/productimg/mother1.png",
         "category": "Motherboard",
         "price": 399.99,
         "description": "High-end motherboard with great overclocking support.",
@@ -484,7 +452,7 @@
     {
         "product_id": "MB-002",
         "product_title": "MSI MPG B550 Gaming Edge",
-        "product_image": "/images/motherboard_2.jpg",
+        "product_image": "/productimg/mother2.png",
         "category": "Motherboard",
         "price": 179.99,
         "description": "Solid AMD AM4 motherboard with good features.",
@@ -500,7 +468,7 @@
     {
         "product_id": "MB-003",
         "product_title": "Gigabyte Z690 AORUS Pro",
-        "product_image": "/images/motherboard_3.jpg",
+        "product_image": "/productimg/mother3.png",
         "category": "Motherboard",
         "price": 299.99,
         "description": "Feature-rich Intel motherboard for high performance.",
@@ -516,7 +484,7 @@
     {
         "product_id": "MB-004",
         "product_title": "ASRock B450 Steel Legend",
-        "product_image": "/images/motherboard_4.jpg",
+        "product_image": "/productimg/mother4.png",
         "category": "Motherboard",
         "price": 109.99,
         "description": "Reliable and affordable AMD motherboard for gamers.",
@@ -532,7 +500,7 @@
     {
         "product_id": "MB-005",
         "product_title": "EVGA Z590 FTW",
-        "product_image": "/images/motherboard_5.jpg",
+        "product_image": "/productimg/mother5.png",
         "category": "Motherboard",
         "price": 349.99,
         "description": "Premium Intel motherboard with strong power delivery.",
@@ -548,7 +516,7 @@
     {
         "product_id": "MB-006",
         "product_title": "ASUS TUF Gaming B660-PLUS",
-        "product_image": "/images/motherboard_6.jpg",
+        "product_image": "/productimg/mother6.png",
         "category": "Motherboard",
         "price": 189.99,
         "description": "Durable motherboard with solid features for gaming builds.",

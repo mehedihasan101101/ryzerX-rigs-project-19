@@ -6,7 +6,7 @@ const ProductArchive = () => {
 
     return (
 
-        <div className="grid grid-cols-3  gap-5 w-full">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2   gap-5 w-full">
             {allProducts.map(eachProduct => <ProductCard eachProduct={eachProduct}></ProductCard>)}
         </div>
 
