@@ -1,10 +1,12 @@
 import Categoryies from "../categories/Categoryies";
 
-import { Outlet } from "react-router";
+import { Outlet} from "react-router";
 import Herosection from "../heroSection/Herosection";
 
 
 const Home = () => {
+
+
   return (
     <>
       <Herosection></Herosection>

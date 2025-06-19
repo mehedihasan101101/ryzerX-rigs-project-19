@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import Root from './components/root/Root';
 import Home from './components/home/Home';
 import Statistics from './components/statistics/Statistics';
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
         children: [
           {
+            index: true,
+            element: <Navigate to="category/all" replace />
+          },
+          {
             path: "category/:categoryname",
             element: <ProductArchive></ProductArchive>,
             loader: handleApiData
@@ -35,8 +39,8 @@ const router = createBrowserRouter([
       {
         path: "category/:categoryname/:productId",
         element: <SingleProductPage></SingleProductPage>,
-        loader:handleApiData
-   
+        loader: handleApiData
+
       },
 
       {

@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
+import { NavLink} from "react-router";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { CiHeart } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
@@ -9,6 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 
 
 const NavBar = () => {
+
     // State to handle mobile menu open/close
     const [open, setOpen] = useState(false);
     // State to handle cart tab open/close
@@ -26,7 +27,7 @@ const NavBar = () => {
     ]
     return (
         // Main navigation bar
-        <nav className=" lg:py-7 py-5  bg-transparent pr-2  mt-7">
+        <nav className={`lg:py-7 py-5  bg-transparent pr-2 mt-2 `}>
 
             <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-6">
                 {/* Mobile Menu Toggle Icon */}
@@ -60,7 +61,7 @@ const NavBar = () => {
 
                     {/* Wishlist Button */}
                     <button onClick={() => { setwishListTab(!wishListTab); setCartTab(false) }} className="btn indicator btn-circle" >
-                        <CiHeart className="text-2xl text-black"></CiHeart>
+                        <FaRegHeart className="text-2xl text-black"></FaRegHeart>
                         <span className="badge badge-sm indicator-item text-black">8</span>
 
                         {/* WishList Tab which shown only when cart icon is clicked */}
