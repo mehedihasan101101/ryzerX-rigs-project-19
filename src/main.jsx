@@ -9,6 +9,8 @@ import Dashboard from './components/dashboard/Dashboard';
 import AboutUs from './components/about/AboutUs';
 import ProductArchive from './components/productArchive/ProductArchive';
 import { handleApiData } from './utilities/handleApiData';
+import SingleProductPage from './components/singleProductPage/SingleProductPage';
+
 
 
 
@@ -26,10 +28,17 @@ const router = createBrowserRouter([
           {
             path: "category/:categoryname",
             element: <ProductArchive></ProductArchive>,
-            loader: handleApiData,
+            loader: handleApiData
           }
         ]
       },
+      {
+        path: "category/:categoryname/:productId",
+        element: <SingleProductPage></SingleProductPage>,
+        loader:handleApiData
+   
+      },
+
       {
         path: "statistics",
         element: <Statistics></Statistics>
