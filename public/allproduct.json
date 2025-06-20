@@ -44,7 +44,7 @@
             "512GB SSD",
             "13.3 inch 4K UHD"
         ],
-        "availability": true,
+        "availability": false,
         "rating": 4.6
     },
     {
@@ -76,7 +76,7 @@
             "1TB SSD",
             "14 inch FHD 120Hz"
         ],
-        "availability": true,
+        "availability": false,
         "rating": 4.7
     },
     {
@@ -188,7 +188,7 @@
             "1TB HDD",
             "Integrated Graphics"
         ],
-        "availability": true,
+        "availability": false,
         "rating": 4.1
     },
     {
@@ -312,7 +312,7 @@
             "RDNA 2",
             "PCIe 4.0"
         ],
-        "availability": true,
+        "availability": false,
         "rating": 4.4
     },
     {
@@ -400,7 +400,7 @@
             "DDR4 3200MHz",
             "CL16"
         ],
-        "availability": true,
+        "availability": false,
         "rating": 4.8
     },
     {

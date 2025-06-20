@@ -1,14 +1,19 @@
-import { NavLink} from "react-router";
+import { NavLink } from "react-router";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import CartBasket from "./CartBasket";
 
 
 
 
-const NavBar = () => {
+
+const NavBar = ({ cartItems }) => {
+
+    console.log(cartItems)
+
 
     // State to handle mobile menu open/close
     const [open, setOpen] = useState(false);
@@ -52,12 +57,12 @@ const NavBar = () => {
                     <button onClick={() => { setCartTab(!CartTab); setwishListTab(false) }} className="btn indicator btn-circle" >
 
                         <AiOutlineShoppingCart className="text-2xl text-black"></AiOutlineShoppingCart>
-                        <span className="badge badge-sm indicator-item text-black">8</span>
+                        <span className="badge badge-sm indicator-item text-black">{cartItems.length}</span>
                         {/* cart Tab which shown  only when  cart icon is clicked */}
-                        <div className={`shadow absolute top-15 w-[300px] right-0 h-15 ${CartTab ? "" : "hidden"}`}>
-                            <h1>Total Price: 300$</h1>
-                        </div>
                     </button>
+                    <div className={`shadow absolute top-20   p-5 right-45 bg-white/90 ${CartTab ? "" : "hidden"}`}>
+                        {cartItems.map(cartItem => <CartBasket cartItem={cartItem}></CartBasket>)}
+                    </div>
 
                     {/* Wishlist Button */}
                     <button onClick={() => { setwishListTab(!wishListTab); setCartTab(false) }} className="btn indicator btn-circle" >

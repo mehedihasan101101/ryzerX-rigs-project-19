@@ -3,9 +3,13 @@ import { Link, useLoaderData, useParams } from 'react-router';
 import StarRatings from 'react-star-ratings';
 import { IoMdStar } from "react-icons/io";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaRegHeart } from "react-icons/fa";
+import { useContext } from 'react';
+import { cartContext } from '../root/Root';
 
 
 const SingleProductPage = () => {
+
 
     // Get the productId from the URL parameters
     const { productId } = useParams();
@@ -15,9 +19,17 @@ const SingleProductPage = () => {
 
     // Find the single product that matches the productId (case-insensitive)
     const singleProduct = allProducts.find(each => each.product_id.toLowerCase() === productId);
-    const { product_image, product_title, price, availability, Specification, description, rating } = singleProduct;
-    console.log(singleProduct)
 
+    const { product_image, product_title, price, availability, Specification, description, rating } = singleProduct;
+
+    // Access the setCartItems function from the cart context to update cart state
+    const { cartItems, setCartItems } = useContext(cartContext)
+
+
+    // Function to handle adding the product to the cart
+    function handleCart() {
+        setCartItems([...cartItems, singleProduct])
+    }
     return (
         <>
             <div className='bg-gray-200 flex flex-col items-center justify-center pt-10 pb-75'>
@@ -33,7 +45,7 @@ const SingleProductPage = () => {
                     <h1 className='font-bold text-[28px] '>{product_title}</h1>
                     <p className='text-xl font-bold'>Price:$ {price}</p>
 
-                    <p className='bg-[#309C08]/10 inline  py-1 px-2 rounded-full border border-[#309C08]'>{availability ? "In Stock" : "Out of Stock"}</p>
+                    <p className={`  py-1 px-2 rounded-full border ${availability ? "bg-[#309C08]/10 border-[#309C08]" : "bg-red-500/10 border-red-500"} inline`}>{availability ? "In Stock" : "Out of Stock"}</p>
                     <p className='mt-3'>{description}</p>
                     <h3 className='mt-3 text-xl font-bold'>Specification</h3>
 
@@ -55,13 +67,14 @@ const SingleProductPage = () => {
                         <p className='bg-gray-200/70 rounded-3xl  py-1 text-[13px] px-3 '>{rating}</p>
 
                     </div>
-                    <div>
-                        <Link className='btn rounded-4xl'>Add to Cart <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart></Link>
+                    <div className='flex gap-2'>
+                        <Link onClick={handleCart} className='btn rounded-4xl'>Add to Cart <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart></Link>
+                        <Link className='btn btn-circle'><FaRegHeart className="text-xl"></FaRegHeart></Link>
                     </div>
 
 
                 </div>
-            </div>
+            </div >
 
         </>
     );
