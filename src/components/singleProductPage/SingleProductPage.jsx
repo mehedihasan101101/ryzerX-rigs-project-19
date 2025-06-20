@@ -32,13 +32,13 @@ const SingleProductPage = () => {
     }
     return (
         <>
-            <div className='bg-gray-200 flex flex-col items-center justify-center pt-10 pb-75'>
+            <div className='bg-gray-200 flex flex-col items-center justify-center pt-10 md:pb-75 pb-40'>
                 <h1 className='font-bold text-2xl text-center'>Product Details</h1>
                 <p className='text-center max-w-[750px]'>Find all the essential information about this product, including its features, specifications, and availability. Everything you need to know is right here.</p>
             </div>
 
-            <div className='flex w-[70%] mb-35 mt-[-13%] bg-white gap-10 p-8 items-center m-auto rounded-2xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] '>
-                <div className=' w-[38%]  p-10  bg-gray-200 rounded-2xl'>
+            <div className='flex md:flex-row   lg:w-[70%] w-[95%] md:mb-35 mb-20 lg:mt-[-13%] md:mt-[-33%] flex-col p-7 mt-[-30%] bg-white gap-10 lg:p-8 md:p-6 items-center m-auto rounded-2xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] '>
+                <div className=' lg:w-[38%] md:w-[50%] p-10  bg-gray-200 rounded-2xl'>
                     <img src={product_image} className='' alt="" />
                 </div>
                 <div className='space-y-3'>
