@@ -1,16 +1,18 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 import CartBasket from "./CartBasket";
+import { TbBasketCancel } from "react-icons/tb";
 
 
 
 
 
-const NavBar = ({ cartItems }) => {
+
+const NavBar = ({ cartItems, total }) => {
 
     console.log(cartItems)
 
@@ -60,8 +62,23 @@ const NavBar = ({ cartItems }) => {
                         <span className="badge badge-sm indicator-item text-black">{cartItems.length}</span>
                         {/* cart Tab which shown  only when  cart icon is clicked */}
                     </button>
-                    <div className={`shadow absolute top-20   p-5 right-45 bg-white/90 ${CartTab ? "" : "hidden"}`}>
-                        {cartItems.map(cartItem => <CartBasket cartItem={cartItem}></CartBasket>)}
+                    <div className={`shadow absolute rounded top-20 flex flex-col items-center gap-3 p-5 right-45 bg-white/90 ${CartTab ? "" : "hidden"}`}>
+                        {cartItems.length == 0
+                            ? <div className="flex flex-col items-center">
+                                <TbBasketCancel className="text-xl "></TbBasketCancel>
+                                <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
+                            </div>
+                            : cartItems.map(cartItem => <CartBasket cartItem={cartItem} />)}
+                        <hr className={` text-gray-200 my-4 w-full ${cartItems.length == 0 ? "hidden" : ""} `} />
+                        <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
+
+                            <h1 className={`font-bold`}>Total: ${total.toFixed(2)}</h1>
+                            <Link to={"category"} className="btn">Checkout</Link>
+                        </div>
+
+
+
+
                     </div>
 
                     {/* Wishlist Button */}

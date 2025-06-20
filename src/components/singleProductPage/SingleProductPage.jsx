@@ -23,13 +23,20 @@ const SingleProductPage = () => {
     const { product_image, product_title, price, availability, Specification, description, rating } = singleProduct;
 
     // Access the setCartItems function from the cart context to update cart state
-    const { cartItems, setCartItems } = useContext(cartContext)
+    const { cartItems, setCartItems, setTotal } = useContext(cartContext)
 
 
-    // Function to handle adding the product to the cart
+    // Function to handle adding the product to the cart and calculate the total price
     function handleCart() {
-        setCartItems([...cartItems, singleProduct])
+        const updatedCart = [...cartItems, singleProduct];
+        setCartItems(updatedCart);
+
+        const totalPrice = updatedCart.reduce((acc, eachCartItem) => acc + eachCartItem.price, 0)
+
+        setTotal(totalPrice)
+
     }
+
     return (
         <>
             <div className='bg-gray-200 flex flex-col items-center justify-center pt-10 md:pb-75 pb-40'>

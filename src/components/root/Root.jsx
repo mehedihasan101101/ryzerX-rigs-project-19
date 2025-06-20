@@ -6,12 +6,17 @@ import { createContext, useState } from "react";
 export const cartContext = createContext([])
 
 const Root = () => {
+    // State to hold the items in the cart
     const [cartItems, setCartItems] = useState([]);
+
+    const [total, setTotal] = useState(0);
+
+
 
     return (
         <>
-            <cartContext.Provider value={{ setCartItems, cartItems }}>
-                <NavBar cartItems={cartItems}></NavBar>
+            <cartContext.Provider value={{ setCartItems, cartItems, setTotal }}>
+                <NavBar cartItems={cartItems} total={total}></NavBar>
                 <Outlet></Outlet>
                 <Footer></Footer>
             </cartContext.Provider>
