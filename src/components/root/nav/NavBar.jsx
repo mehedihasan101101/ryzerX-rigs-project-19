@@ -12,7 +12,7 @@ import { TbBasketCancel } from "react-icons/tb";
 
 
 
-const NavBar = ({ cartItems, total }) => {
+const NavBar = ({ cartItems, total, wishList }) => {
 
     console.log(cartItems)
 
@@ -48,7 +48,7 @@ const NavBar = ({ cartItems, total }) => {
                 {/* Website Main LOGO */}
                 <h1 className="font-extrabold text-xl text-black ">RyzerX</h1>
                 {/* Navigation Links */}
-                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[45%] top-23 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
+                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[45%] top-22 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
                         {navFields.map((field) => <NavLink key={field.id} to={field.path} className={"rounded hover:bg-neutral-200 px-3 py-2"}><li className="pl-14 lg:pl-0">{field.name}</li></NavLink>)}
                     </ul>
@@ -60,15 +60,18 @@ const NavBar = ({ cartItems, total }) => {
 
                         <AiOutlineShoppingCart className="text-2xl text-black"></AiOutlineShoppingCart>
                         <span className="badge badge-sm indicator-item text-black">{cartItems.length}</span>
-                        {/* cart Tab which shown  only when  cart icon is clicked */}
+
                     </button>
-                    <div className={`shadow absolute rounded top-20 flex flex-col items-center gap-3 p-5 right-45 bg-white/90 ${CartTab ? "" : "hidden"}`}>
+                    {/* cart Tab which shown  only when  cart icon is clicked */}
+                    <div className={`shadow absolute rounded top-20 flex flex-col items-center gap-3 p-5 lg:right-45 right-25  bg-white/90 ${CartTab ? "" : "hidden"}`}>
+                        {/* empty cart message when the nothing is added in the cart*/}
                         {cartItems.length == 0
                             ? <div className="flex flex-col items-center">
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
                             </div>
                             : cartItems.map(cartItem => <CartBasket cartItem={cartItem} />)}
+                        {/* ---------------------- */}
                         <hr className={` text-gray-200 my-4 w-full ${cartItems.length == 0 ? "hidden" : ""} `} />
                         <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
 
@@ -76,21 +79,29 @@ const NavBar = ({ cartItems, total }) => {
                             <Link to={"category"} className="btn">Checkout</Link>
                         </div>
 
-
-
-
                     </div>
 
                     {/* Wishlist Button */}
                     <button onClick={() => { setwishListTab(!wishListTab); setCartTab(false) }} className="btn indicator btn-circle" >
                         <FaRegHeart className="text-2xl text-black"></FaRegHeart>
-                        <span className="badge badge-sm indicator-item text-black">8</span>
+                        <span className="badge badge-sm indicator-item text-black">{wishList.length}</span>
 
-                        {/* WishList Tab which shown only when cart icon is clicked */}
-                        <div className={`shadow absolute top-15 w-[300px] right-0 h-15 ${wishListTab ? "" : "hidden"}`}>
-                            <h1>Total : 300$</h1>
-                        </div>
+
+
                     </button>
+                    {/* WishList Tab which shown only when cart icon is clicked */}
+                    <div className={`shadow absolute rounded top-20 flex flex-col items-center gap-3 p-5 lg:right-35 right-12  bg-white/90 ${wishListTab ? "" : "hidden"}`}>
+                        {/* empty wishlist message when the nothing is added in the cart*/}
+                        {wishList.length == 0
+                            ? <div className="flex flex-col items-center">
+                                <TbBasketCancel className="text-xl "></TbBasketCancel>
+                                <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
+                            </div>
+                            : wishList.map(cartItem => <CartBasket cartItem={cartItem} />)
+                        }
+                        <Link to={"category"} className="btn">Manage</Link>
+
+                    </div>
 
                 </div>
 

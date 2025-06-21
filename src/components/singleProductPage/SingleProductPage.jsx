@@ -23,7 +23,7 @@ const SingleProductPage = () => {
     const { product_image, product_title, price, availability, Specification, description, rating } = singleProduct;
 
     // Access the setCartItems function from the cart context to update cart state
-    const { cartItems, setCartItems, setTotal } = useContext(cartContext)
+    const { cartItems, setCartItems, setTotal, wishList, setWishList } = useContext(cartContext)
 
 
     // Function to handle adding the product to the cart and calculate the total price
@@ -35,6 +35,11 @@ const SingleProductPage = () => {
 
         setTotal(totalPrice)
 
+    }
+
+    function handleWishList() {
+        const updatedWishList = [...wishList, singleProduct];
+        setWishList(updatedWishList)
     }
 
     return (
@@ -76,7 +81,7 @@ const SingleProductPage = () => {
                     </div>
                     <div className='flex gap-2'>
                         <Link onClick={handleCart} className='btn rounded-4xl'>Add to Cart <AiOutlineShoppingCart className="text-xl"></AiOutlineShoppingCart></Link>
-                        <Link className='btn btn-circle'><FaRegHeart className="text-xl"></FaRegHeart></Link>
+                        <Link onClick={handleWishList} className='btn btn-circle'><FaRegHeart className="text-xl"></FaRegHeart></Link>
                     </div>
 
 
