@@ -27,7 +27,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
 
     // Navigation fields for the navbar links
     const navFields = [
-        { id: 1, path: "", name: "Home" },
+        { id: 1, path: "category/all", name: "Home" },
         { id: 2, path: "/Statistics", name: "Statistics" },
         { id: 3, path: "/Dashboard", name: "Dashboard" },
         { id: 4, path: "/AboutUs", name: "About Us" },
@@ -50,7 +50,8 @@ const NavBar = ({ cartItems, total, wishList }) => {
                 {/* Navigation Links */}
                 <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto w-[45%] top-22 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
-                        {navFields.map((field) => <NavLink key={field.id} to={field.path} className={"rounded hover:bg-neutral-200 px-3 py-2"}><li className="pl-14 lg:pl-0">{field.name}</li></NavLink>)}
+                        {navFields.map((field) => <NavLink key={field.id} to={field.path} className={({ isActive }) => `rounded px-3 py-2 ${isActive ? "text-white bg-black" :
+                            " hover:bg-neutral-100"}`}><li className="pl-14 lg:pl-0">{field.name}</li></NavLink>)}
                     </ul>
                 </div>
 
