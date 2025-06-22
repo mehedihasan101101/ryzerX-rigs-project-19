@@ -6,6 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import { useContext } from 'react';
 import { cartContext } from '../root/Root';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const SingleProductPage = () => {
@@ -35,6 +36,11 @@ const SingleProductPage = () => {
 
         setTotal(totalPrice)
 
+        toast.success('Added to basket! 👋!', {
+            position: 'top-right',
+            hideProgressBar: true,
+            autoClose: 1000,
+        });
     }
 
     function handleWishList() {
@@ -87,7 +93,7 @@ const SingleProductPage = () => {
 
                 </div>
             </div >
-
+            <ToastContainer ></ToastContainer>
         </>
     );
 };
