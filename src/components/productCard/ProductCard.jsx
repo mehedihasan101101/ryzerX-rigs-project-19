@@ -11,8 +11,8 @@ const ProductCard = ({ eachProduct }) => {
 
             <h1 className="text-xl pl-2 self-start font-bold">{product_title}</h1>
             <h3 className=" pl-2 self-start">{price} $</h3>
-            <Link to={product_id.toLowerCase()} className="btn rounded-4xl self-start mt-auto"> Shop Now</Link>
-      
+            <Link to={product_id.toLowerCase()} className="btn  border   self-start mt-auto font-normal"> Details</Link>
+
 
 
         </div>

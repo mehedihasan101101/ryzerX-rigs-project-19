@@ -77,7 +77,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
                         <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
 
                             <h1 className={`font-bold`}>Total: ${total.toFixed(2)}</h1>
-                            <Link to={"category"} className="btn">Checkout</Link>
+                            <Link to={"dashboard"} className="btn">Checkout</Link>
                         </div>
 
                     </div>
@@ -100,7 +100,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
                             </div>
                             : wishList.map(cartItem => <CartBasket cartItem={cartItem} />)
                         }
-                        <Link to={"category"} className="btn">Manage</Link>
+                        <Link to={"dashboard"} className="btn">Manage</Link>
 
                     </div>
 

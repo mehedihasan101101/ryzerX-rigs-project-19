@@ -7,6 +7,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { useContext } from 'react';
 import { cartContext } from '../root/Root';
 import { ToastContainer, toast } from 'react-toastify';
+import "./tostifyNotification.css"
+
 
 
 const SingleProductPage = () => {
@@ -36,16 +38,26 @@ const SingleProductPage = () => {
 
         setTotal(totalPrice)
 
-        toast.success('Added to basket! 👋!', {
+        toast.success('Added to basket !', {
             position: 'top-right',
             hideProgressBar: true,
             autoClose: 1000,
+            className: "text-black"
+
         });
     }
 
     function handleWishList() {
         const updatedWishList = [...wishList, singleProduct];
         setWishList(updatedWishList)
+
+        toast.success('Added to wishlist !', {
+            position: 'top-right',
+            hideProgressBar: true,
+            autoClose: 1000,
+            className: "text-black"
+
+        });
     }
 
     return (
@@ -93,7 +105,7 @@ const SingleProductPage = () => {
 
                 </div>
             </div >
-            <ToastContainer ></ToastContainer>
+            <ToastContainer className={"text-red-600"} ></ToastContainer>
         </>
     );
 };
