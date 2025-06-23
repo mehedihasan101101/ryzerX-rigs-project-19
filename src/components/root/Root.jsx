@@ -14,13 +14,17 @@ const Root = () => {
 
     const [wishList, setWishList] = useState([])
 
-
-
+    // Function to remove an item from the cart by its product_id
+    function deletefromCart(id){
+       const filtered= cartItems.filter(eachItem =>eachItem.product_id !== id);
+       setCartItems(filtered) 
+    }
+ 
 
     return (
         <>
-            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList }}>
-                <NavBar cartItems={cartItems} total={total} wishList={wishList}></NavBar>
+            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total }}>
+                <NavBar deletefromCart={deletefromCart}  cartItems={cartItems} total={total} wishList={wishList}></NavBar>
                 <Outlet></Outlet>
                 <Footer></Footer>
             </cartContext.Provider>

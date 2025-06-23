@@ -39,7 +39,7 @@ const SingleProductPage = () => {
         setTotal(totalPrice)
 
         toast.success('Added to basket !', {
-            position: 'top-right',
+            position: 'top-left',
             hideProgressBar: true,
             autoClose: 1000,
             className: "text-black"

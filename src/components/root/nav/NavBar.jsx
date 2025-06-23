@@ -4,7 +4,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import CartBasket from "./CartBasket";
+import Basket from "./Basket";
 import { TbBasketCancel } from "react-icons/tb";
 
 
@@ -12,9 +12,9 @@ import { TbBasketCancel } from "react-icons/tb";
 
 
 
-const NavBar = ({ cartItems, total, wishList }) => {
+const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
 
-    console.log(cartItems)
+
 
 
     // State to handle mobile menu open/close
@@ -36,7 +36,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
         // Main navigation bar
         <nav className={`lg:py-7 py-5  bg-transparent pr-2 mt-2 `}>
 
-            <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-6">
+            <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2">
                 {/* Mobile Menu Toggle Icon */}
                 <div className="lg:hidden">
 
@@ -71,7 +71,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
                             </div>
-                            : cartItems.map(cartItem => <CartBasket cartItem={cartItem} />)}
+                            : cartItems.map(cartItem => <Basket cartItem={cartItem} deletefromCart={deletefromCart}></Basket>)}
                         {/* ---------------------- */}
                         <hr className={` text-gray-200 my-4 w-full ${cartItems.length == 0 ? "hidden" : ""} `} />
                         <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
@@ -98,7 +98,7 @@ const NavBar = ({ cartItems, total, wishList }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
                             </div>
-                            : wishList.map(cartItem => <CartBasket cartItem={cartItem} />)
+                            : wishList.map(cartItem => <Basket cartItem={cartItem}></Basket>)
                         }
                         <Link to={"dashboard"} className="btn">Manage</Link>
 

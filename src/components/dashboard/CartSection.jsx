@@ -1,20 +1,29 @@
 import { Link, } from 'react-router';
 import { IoOptionsOutline } from "react-icons/io5";
 import { BiPurchaseTag } from "react-icons/bi";
+import { useContext } from 'react';
+import { cartContext } from '../root/Root';
+import CartItemCard from './CartItemCard';
 
 
 const CartSection = () => {
+    const { cartItems, total } = useContext(cartContext);
+    console.log(cartItems)
     return (
-        <div className="lg:max-w-[86%] m-auto mt-6">
+        <div className="lg:max-w-[86%] max-w-[98%] m-auto mt-6">
             <div className=" flex items-center justify-between ">
                 <h3 className="font-bold text-xl">Cart</h3>
                 <div className='flex items-center gap-3'>
-                    <h3 className="font-bold text-xl">Total Price:99999</h3>
+                    <h3 className="font-bold md:block hidden ">Total Price:${total}</h3>
 
                     <Link className='btn rounded-4xl'>Sort By Price <IoOptionsOutline className="text-xl"></IoOptionsOutline></Link>
                     <Link className='btn rounded-4xl'>Purchase <BiPurchaseTag className="text-xl"></BiPurchaseTag></Link>
                 </div>
-
+               
+            </div>
+             <h3 className="font-bold  text-right mt-3 pr-2 md:hidden">Total Price:${total}</h3>
+            <div className=''>
+                {cartItems.map(eachItem => <CartItemCard eachItem={eachItem}></CartItemCard>)}
             </div>
 
         </div>
