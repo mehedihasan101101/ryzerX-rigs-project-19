@@ -13,20 +13,37 @@ const Root = () => {
     const [total, setTotal] = useState(0);
 
     const [wishList, setWishList] = useState([])
-
     // Function to remove an item from the cart by its product_id
-    function deletefromCart(id){
-       const filtered= cartItems.filter(eachItem =>eachItem.product_id !== id);
-       setCartItems(filtered) 
+    function deletefromCart(id, boxId) {
+        // Filter out the item with the given product_id from the cartItems array
+        const filtered = () => {
+            if (boxId == "cartBasket") {
+                const cartBasketFiltered = cartItems.filter(eachItem => eachItem.product_id !== id)
+                const totalPrice = cartBasketFiltered.reduce((acc, eachCartItem) => acc + eachCartItem.price, 0)
+                setTotal(totalPrice)
+                return (cartBasketFiltered);
+            }
+            else {
+                const wishListFiltered = wishList.filter(eachItem => eachItem.product_id !== id);
+                return (wishListFiltered)
+            }
+
+        }
+
+        // If boxId is "cartBasket", update cartItems; otherwise, update wishList
+        { boxId == "cartBasket" ? setCartItems(filtered) : setWishList(filtered) }
     }
- 
+
 
     return (
         <>
-            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total }}>
-                <NavBar deletefromCart={deletefromCart}  cartItems={cartItems} total={total} wishList={wishList}></NavBar>
+            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total, deletefromCart }}>
+                <NavBar deletefromCart={deletefromCart} cartItems={cartItems} total={total} wishList={wishList}></NavBar>
                 <Outlet></Outlet>
-                <Footer></Footer>
+
+                <Footer ></Footer>
+
+
             </cartContext.Provider>
 
         </>

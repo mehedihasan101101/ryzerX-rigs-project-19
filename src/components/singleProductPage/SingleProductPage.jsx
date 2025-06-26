@@ -52,7 +52,7 @@ const SingleProductPage = () => {
         setWishList(updatedWishList)
 
         toast.success('Added to wishlist !', {
-            position: 'top-right',
+            position: 'top-left',
             hideProgressBar: true,
             autoClose: 1000,
             className: "text-black"

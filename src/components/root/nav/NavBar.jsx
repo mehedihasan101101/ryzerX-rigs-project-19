@@ -4,8 +4,9 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import Basket from "./Basket";
+import CartBasket from "./CartBasket";
 import { TbBasketCancel } from "react-icons/tb";
+import WishlistBasket from "./WishlistBasket";
 
 
 
@@ -71,7 +72,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
                             </div>
-                            : cartItems.map(cartItem => <Basket cartItem={cartItem} deletefromCart={deletefromCart}></Basket>)}
+                            : cartItems.map(cartItem => <CartBasket cartItem={cartItem} deletefromCart={deletefromCart}></CartBasket>)}
                         {/* ---------------------- */}
                         <hr className={` text-gray-200 my-4 w-full ${cartItems.length == 0 ? "hidden" : ""} `} />
                         <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
@@ -98,7 +99,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
                             </div>
-                            : wishList.map(cartItem => <Basket cartItem={cartItem}></Basket>)
+                            : wishList.map(wishListItem => <WishlistBasket wishListItem={wishListItem}  deletefromCart={deletefromCart}></WishlistBasket>)
                         }
                         <Link to={"dashboard"} className="btn">Manage</Link>
 

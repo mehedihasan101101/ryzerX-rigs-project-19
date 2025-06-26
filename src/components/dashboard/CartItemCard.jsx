@@ -1,8 +1,11 @@
 import { RiDeleteBinFill } from "react-icons/ri";
+import { Link } from "react-router";
 
 
-const CartItemCard = ({ eachItem }) => {
-    const { product_image, product_title, description, price } = eachItem;
+const CartItemCard = ({ eachItem,deletefromCart }) => {
+  const CartBasketid = "cartBasket";
+
+    const { product_image, product_title, description, price ,product_id } = eachItem;
     return (
         <div className="flex items-center md:mt-5 mt-2 lg:h-45 md:h-41 px-3 py-3 lg:px-5 md:px-3 rounded-xl w-full justify-between shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
 
@@ -19,7 +22,7 @@ const CartItemCard = ({ eachItem }) => {
 
             </div>
             <div className="pl-2">
-                <RiDeleteBinFill className="text-[#e3342f] text-2xl"></RiDeleteBinFill>
+              <Link onClick={()=>deletefromCart(product_id,CartBasketid)}><RiDeleteBinFill className="text-[#e3342f] text-2xl"></RiDeleteBinFill></Link>  
             </div>
 
         </div>
