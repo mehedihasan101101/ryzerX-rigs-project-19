@@ -7,8 +7,17 @@ import CartItemCard from './CartItemCard';
 import { TbBasketCancel } from "react-icons/tb";
 
 const CartSection = () => {
-    const { cartItems, total, deletefromCart } = useContext(cartContext);
-    console.log(cartItems)
+    const { cartItems, total, deletefromCart, dashboardCart, setDashboardCart } = useContext(cartContext);
+
+
+
+
+
+    function sortByPrice() {
+        const sorted = [...cartItems].sort((a, b) => a.price - b.price);
+        setDashboardCart(sorted);
+    }
+
     return (
         <div className="lg:max-w-[86%] max-w-[98%] m-auto mt-6">
             <div className=" flex items-center justify-between ">
@@ -16,15 +25,16 @@ const CartSection = () => {
                 <div className='flex items-center gap-3'>
                     <h3 className="font-bold md:block hidden ">Total Price:${total}</h3>
 
-                    <Link className='btn rounded-4xl'>Sort By Price <IoOptionsOutline className="text-xl"></IoOptionsOutline></Link>
+                    <Link onClick={sortByPrice} className='btn rounded-4xl'>Sort By Price <IoOptionsOutline className="text-xl"></IoOptionsOutline></Link>
                     <Link className='btn rounded-4xl'>Purchase <BiPurchaseTag className="text-xl"></BiPurchaseTag></Link>
                 </div>
 
             </div>
             <h3 className="font-bold  text-right mt-3 pr-2 md:hidden">Total Price:${total}</h3>
+
             <div className=''>
 
-                {cartItems.length ? cartItems.map(eachItem => <CartItemCard eachItem={eachItem} deletefromCart={deletefromCart}></CartItemCard>) :
+                {cartItems.length ? dashboardCart.map(eachItem => <CartItemCard eachItem={eachItem} deletefromCart={deletefromCart}></CartItemCard>) :
                     <div className="flex flex-col items-center py-30">
                         <TbBasketCancel className="text-xl  "></TbBasketCancel>
                         <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>

@@ -2,7 +2,7 @@ import { RiDeleteBinFill } from "react-icons/ri";
 import { Link } from "react-router";
 
 
-const CartItemCard = ({ eachItem,deletefromCart }) => {
+const CartItemCard = ({ eachItem,deletefromCart ,sortByPrice}) => {
   const CartBasketid = "cartBasket";
 
     const { product_image, product_title, description, price ,product_id } = eachItem;

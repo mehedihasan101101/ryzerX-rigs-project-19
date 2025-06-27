@@ -2,15 +2,25 @@ import { Outlet } from "react-router";
 import NavBar from "./nav/NavBar";
 import Footer from "./footer/Footer";
 import { createContext, useState } from "react";
+import { useEffect } from "react";
 
 export const cartContext = createContext([])
 
 const Root = () => {
+
     // State to hold the items in the cart
     const [cartItems, setCartItems] = useState([]);
 
     // State to hold the total price of items in the cart
     const [total, setTotal] = useState(0);
+
+    const [dashboardCart, setDashboardCart] = useState(cartItems);
+
+    // useEffect is used here to maintain a separate dashboardCart state,
+    // allowing independent sorting or modifications without affecting cartItems.
+    useEffect(() => {
+        setDashboardCart(cartItems);
+    }, [cartItems])
 
     const [wishList, setWishList] = useState([])
     // Function to remove an item from the cart by its product_id
@@ -37,7 +47,7 @@ const Root = () => {
 
     return (
         <>
-            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total, deletefromCart }}>
+            <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total, deletefromCart, dashboardCart, setDashboardCart }}>
                 <NavBar deletefromCart={deletefromCart} cartItems={cartItems} total={total} wishList={wishList}></NavBar>
                 <Outlet></Outlet>
 
