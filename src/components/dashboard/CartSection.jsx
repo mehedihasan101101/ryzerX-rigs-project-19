@@ -27,7 +27,7 @@ const CartSection = () => {
             <div className=" flex items-center justify-between ">
                 <h3 className="font-bold text-xl">Cart</h3>
                 <div className='flex items-center gap-3'>
-                    <h3 className="font-bold md:block hidden ">Total Price:${total}</h3>
+                    <h3 className="font-bold md:block hidden ">Total Price:${total.toFixed(2)}</h3>
 
                     <Link onClick={sortByPrice} className='btn rounded-4xl'>Sort By Price <IoOptionsOutline className="text-xl"></IoOptionsOutline></Link>
                     <Link className='btn rounded-4xl'>Purchase <BiPurchaseTag className="text-xl"></BiPurchaseTag></Link>
