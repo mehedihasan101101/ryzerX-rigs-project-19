@@ -10,8 +10,8 @@ const Dashboard = () => {
                     track your favorite items, and get ready for a smooth
                     shopping experience.</p>
                 <div className="flex  gap-3 mt-5">
-                    <NavLink to={"cart"} className="btn rounded-full w-30">Cart</NavLink>
-                    <NavLink to={"wishlist"} className="btn rounded-full w-30">Wishlist</NavLink>
+                    <NavLink to={"cart"} className={({ isActive }) => `btn rounded-full w-30 ${isActive ? "bg-black text-white" : ""}`}>Cart</NavLink>
+                    <NavLink to={"wishlist"} className={({ isActive }) => `btn rounded-full w-30 ${isActive ? "bg-black text-white" : ""}`}>Wishlist</NavLink>
                 </div>
             </div>
 

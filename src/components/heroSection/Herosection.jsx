@@ -8,7 +8,7 @@ const Herosection = () => {
                 <h1 className="lg:text-[56px] md:text-[50px] text-3xl max-w-[1000px] text-center font-bold  text-black ">Enhance Your Gaming and Workstation Setup</h1>
                 <p className="text-[#6b6b6f]  text-[14px] text-center max-w-[800px]">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories,
                     we have it all!</p>
-                <button className="btn rounded-4xl">Shop Now</button>
+                <a href="#toShopNow"><button className="btn rounded-4xl ">Shop Now</button></a>
             </div>
             <div className="lg:w-[40%] w-[70%] m-auto p-5 lg:mt-[-260px] md:mt-[-200px] mt-[-110px] border border-white  rounded-2xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] ">
                 <div>

@@ -37,7 +37,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
         // Main navigation bar
         <nav className={`lg:py-7 py-5  bg-transparent pr-2 mt-2 `}>
 
-            <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2">
+            <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2 md:px-4">
                 {/* Mobile Menu Toggle Icon */}
                 <div className="lg:hidden">
 
@@ -47,7 +47,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
 
                 </div>
                 {/* Website Main LOGO */}
-                <h1 className="font-extrabold text-xl text-black ">RyzerX</h1>
+                <Link><h1 className="font-extrabold text-xl text-black ">RyzerX</h1></Link>
                 {/* Navigation Links */}
                 <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-22 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
@@ -99,9 +99,9 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
                             </div>
-                            : wishList.map(wishListItem => <WishlistBasket wishListItem={wishListItem}  deletefromCart={deletefromCart}></WishlistBasket>)
+                            : wishList.map(wishListItem => <WishlistBasket wishListItem={wishListItem} deletefromCart={deletefromCart}></WishlistBasket>)
                         }
-                        <Link to={"dashboard"} className="btn">Manage</Link>
+                        <Link to={"dashboard/wishlist"} className="btn">Manage</Link>
 
                     </div>
 
