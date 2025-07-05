@@ -34,6 +34,9 @@ async function handleApiData({ params }) {
         const monitor = allproduct.filter(eachProduct => eachProduct.category.toUpperCase() === categoryname.toUpperCase())
         return monitor;
     }
+    else{
+        return allproduct;
+    }
 
 }
 

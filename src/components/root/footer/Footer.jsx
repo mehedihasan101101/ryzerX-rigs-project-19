@@ -1,9 +1,9 @@
 
 const Footer = () => {
     return (
-        <footer className="shadow-2xl mt-30 ">
+        <footer className="shadow-[0px_-8px_14px_-8px_rgba(0,_0,_0,_0.1)]">
             <div className="lg:max-w-[90%] m-auto space-y-3">
-                <h1 className="font-extrabold text-3xl text-center ">RyzerX</h1>
+                <h1 className="font-extrabold text-3xl text-center pt-10 ">RyzerX</h1>
                 <p className="text-center text-[18px] text-[#6b6b6f]">Leading the way in cutting edge technology and innovation.</p>
                 <  hr className="text-[#e7e7e7] " />
                 <div className="flex justify-around">

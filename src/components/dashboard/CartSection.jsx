@@ -23,7 +23,7 @@ const CartSection = () => {
     }
 
     return (
-        <div className="lg:max-w-[87%] max-w-[98%] m-auto mt-6">
+        <div className="lg:max-w-[87%] max-w-[98%] m-auto mt-6 pb-25">
             <div className=" flex items-center justify-between ">
                 <h3 className="font-bold text-xl">Cart</h3>
                 <div className='flex items-center gap-3'>
@@ -39,7 +39,7 @@ const CartSection = () => {
             <div className=''>
 
                 {cartItems.length ? dashboardCart.map(eachItem => <CartItemCard key={eachItem.product_id} eachItem={eachItem} deletefromCart={deletefromCart}></CartItemCard>) :
-                    <div className="flex flex-col items-center py-30">
+                    <div className="flex flex-col items-center mt-15 py-15">
                         <TbBasketCancel className="text-xl  "></TbBasketCancel>
                         <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
                     </div>}

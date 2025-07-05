@@ -49,7 +49,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                 {/* Website Main LOGO */}
                 <Link><h1 className="font-extrabold text-xl text-black ">RyzerX</h1></Link>
                 {/* Navigation Links */}
-                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-22 h-screen  bg-neutral-100/90 lg:bg-transparent   absolute `}>
+                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-22 h-screen z-50 bg-neutral-100/90 lg:bg-transparent   absolute `}>
                     <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
                         {navFields.map((field) => <NavLink key={field.id} to={field.path} className={({ isActive }) => `rounded px-3 py-2 block ${isActive ? "text-white bg-black" :
                             " hover:bg-neutral-100"}`}>{field.name}</NavLink>)}
@@ -96,7 +96,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                         {/* empty wishlist message when the nothing is added in the cart*/}
                         {wishList.length == 0
                             ? <div className="flex flex-col items-center">
-                                <TbBasketCancel className="text-xl "></TbBasketCancel>
+                                <FaRegHeart className="text-xl "></FaRegHeart>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
                             </div>
                             : wishList.map(wishListItem => <WishlistBasket wishListItem={wishListItem} deletefromCart={deletefromCart}></WishlistBasket>)
