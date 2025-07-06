@@ -72,7 +72,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                                 <TbBasketCancel className="text-xl "></TbBasketCancel>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your cart yet.</h1>
                             </div>
-                            : cartItems.map(cartItem => <CartBasket cartItem={cartItem} deletefromCart={deletefromCart}></CartBasket>)}
+                            : cartItems.map(cartItem => <CartBasket key={cartItem.product_id} cartItem={cartItem} deletefromCart={deletefromCart}></CartBasket>)}
                         {/* ---------------------- */}
                         <hr className={` text-gray-200 my-4 w-full ${cartItems.length == 0 ? "hidden" : ""} `} />
                         <div className={` flex items-center justify-between w-full ${cartItems.length == 0 ? "hidden" : ""}`}>
@@ -99,7 +99,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                                 <FaRegHeart className="text-xl "></FaRegHeart>
                                 <h1 className="text-[#6b6b6f]">Oops! Nothing in your wishList yet.</h1>
                             </div>
-                            : wishList.map(wishListItem => <WishlistBasket wishListItem={wishListItem} deletefromCart={deletefromCart}></WishlistBasket>)
+                            : wishList.map(wishListItem => <WishlistBasket key={wishListItem.product_id} wishListItem={wishListItem} deletefromCart={deletefromCart}></WishlistBasket>)
                         }
                         <Link to={"dashboard/wishlist"} className="btn">Manage</Link>
 

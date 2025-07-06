@@ -80,7 +80,7 @@ const SingleProductPage = () => {
                     <h3 className='mt-3 text-xl font-bold'>Specification</h3>
 
                     <ul className='list-decimal ml-7'>
-                        {Specification.map(eachSpecification => <li>{eachSpecification}</li>)}
+                        {Specification.map(  (eachSpecification,index) => <li  key={index} >{eachSpecification}</li>)}
                     </ul>
 
                     <h3 className='mt-3 text-xl font-bold flex items-center'>Rating <IoMdStar className='text-3xl text-yellow-400' ></IoMdStar></h3>

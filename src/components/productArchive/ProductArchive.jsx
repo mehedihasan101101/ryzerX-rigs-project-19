@@ -8,7 +8,7 @@ const ProductArchive = () => {
     return (
 
         <div className="grid lg:grid-cols-4 md:grid-cols-2   gap-5 w-full pb-15">
-            {allProducts.map(eachProduct => <ProductCard eachProduct={eachProduct}></ProductCard>)}
+            {allProducts.map(eachProduct => <ProductCard key={eachProduct.product_id} eachProduct={eachProduct}></ProductCard>)}
         </div>
 
     );
