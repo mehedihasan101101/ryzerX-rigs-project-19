@@ -10,8 +10,8 @@ const Chart = ({ data }) => {
                     <Tooltip />
                     <Legend />
                     <CartesianGrid stroke="#f5f5f5" />
-                    <Bar dataKey="price" barSize={30} fill="#4B5563" />
-                    <Area type="monotone" dataKey="rating" fill="#4B5563" stroke="#000000" />
+                    <Bar dataKey="price" barSize={30} fill="#9538E2" />
+                    <Area type="monotone" dataKey="rating" fill="#9538E2" stroke="#BF87EE" />
                 </ComposedChart>
             </ResponsiveContainer>
         </div>
