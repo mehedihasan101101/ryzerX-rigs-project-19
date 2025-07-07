@@ -30,7 +30,7 @@ const CartSection = () => {
                     <h3 className="font-bold md:block hidden ">Total Price:${total.toFixed(2)}</h3>
 
                     <Link onClick={sortByPrice} className='btn rounded-4xl'>Sort By Price <IoOptionsOutline className="text-xl"></IoOptionsOutline></Link>
-                    <Link className='btn rounded-4xl'>Purchase <BiPurchaseTag className="text-xl"></BiPurchaseTag></Link>
+                    <button className='btn rounded-4xl' onClick={() => document.getElementById('my_modal_1').showModal()} >Purchase <BiPurchaseTag className="text-xl"></BiPurchaseTag></button>
                 </div>
 
             </div>
@@ -45,6 +45,19 @@ const CartSection = () => {
                     </div>}
 
             </div>
+
+            {cartItems.length > 0 &&
+                <dialog id="my_modal_1" className="modal">
+                    <div className="modal-box">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <p className="py-4">Press ESC key or click the button below to close</p>
+                        <div className="modal-action">
+                            <form method="dialog">
+                                <button className="btn">Close</button>
+                            </form>
+                        </div>
+                    </div>
+                </dialog>}
 
         </div>
     );
