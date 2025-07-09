@@ -13,6 +13,7 @@ import SingleProductPage from './components/singleProductPage/SingleProductPage'
 
 import WishlistSection from './components/dashboard/WishlistSection';
 import CartSection from './components/dashboard/CartSection';
+import ErrorPage from './components/errorPage/ErrorPage';
 
 
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   {
     path: "",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: "",
