@@ -10,8 +10,9 @@ import AboutUs from './components/about/AboutUs';
 import ProductArchive from './components/productArchive/ProductArchive';
 import { handleApiData } from './utilities/handleApiData';
 import SingleProductPage from './components/singleProductPage/SingleProductPage';
-import CartSection from './components/dashboard/cartSection';
+
 import WishlistSection from './components/dashboard/WishlistSection';
+import CartSection from './components/dashboard/CartSection';
 
 
 

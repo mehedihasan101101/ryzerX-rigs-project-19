@@ -31,22 +31,35 @@ const SingleProductPage = () => {
 
     // Function to handle adding the product to the cart and calculate the total price
     function handleCart() {
-        const updatedCart = [...cartItems, singleProduct];
-        setCartItems(updatedCart);
+        if (singleProduct.availability) {
+            const updatedCart = [...cartItems, singleProduct];
+            setCartItems(updatedCart);
 
-        const totalPrice = updatedCart.reduce((acc, eachCartItem) => acc + eachCartItem.price, 0)
+            const totalPrice = updatedCart.reduce((acc, eachCartItem) => acc + eachCartItem.price, 0)
 
-        setTotal(totalPrice)
+            setTotal(totalPrice)
 
-        toast.success('Added to basket !', {
-            position: 'top-left',
-            hideProgressBar: true,
-            autoClose: 1000,
-            className: "text-black"
+            toast.success('Added to basket !', {
+                position: 'top-left',
+                hideProgressBar: true,
+                autoClose: 1000,
+                className: "text-black"
 
-        });
+            });
+
+        }
+        else {
+            toast.warning('Sorry, this item is currently out of stock.', {
+                position: 'top-left',
+                hideProgressBar: true,
+                autoClose: 1000,
+                className: "text-black"
+
+            });
+        }
+
     }
-
+    // Function to handle adding the product to the wishlist
     function handleWishList() {
         const updatedWishList = [...wishList, singleProduct];
         setWishList(updatedWishList)
@@ -80,7 +93,7 @@ const SingleProductPage = () => {
                     <h3 className='mt-3 text-xl font-bold'>Specification</h3>
 
                     <ul className='list-decimal ml-7'>
-                        {Specification.map(  (eachSpecification,index) => <li  key={index} >{eachSpecification}</li>)}
+                        {Specification.map((eachSpecification, index) => <li key={index} >{eachSpecification}</li>)}
                     </ul>
 
                     <h3 className='mt-3 text-xl font-bold flex items-center'>Rating <IoMdStar className='text-3xl text-yellow-400' ></IoMdStar></h3>

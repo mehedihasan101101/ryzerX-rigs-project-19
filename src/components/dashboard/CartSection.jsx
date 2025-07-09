@@ -1,13 +1,13 @@
-import { Link, } from 'react-router';
+import { Link, Navigate, } from 'react-router';
 import { IoOptionsOutline } from "react-icons/io5";
 import { BiPurchaseTag } from "react-icons/bi";
 import { useContext, useState } from 'react';
 import { cartContext } from '../root/Root';
 import CartItemCard from './CartItemCard';
 import { TbBasketCancel } from "react-icons/tb";
-
+import successfulIcon from "./../../assets/icons8-check.gif"
 const CartSection = () => {
-    const { cartItems, total, deletefromCart, dashboardCart, setDashboardCart } = useContext(cartContext);
+    const { cartItems, total, deletefromCart, dashboardCart, setDashboardCart,setCartItems } = useContext(cartContext);
 
     // State to toggle sorting order: true for low to high, false for high to low
     const [isLowtoHigh, setisLowtoHigh] = useState(true);
@@ -20,6 +20,9 @@ const CartSection = () => {
         const sorted = [...cartItems].sort((a, b) => isLowtoHigh ? a.price - b.price : b.price - a.price);
         setDashboardCart(sorted);
         setisLowtoHigh(!isLowtoHigh)
+    }
+    function closeModal(){
+        setCartItems([]);
     }
 
     return (
@@ -48,12 +51,17 @@ const CartSection = () => {
 
             {cartItems.length > 0 &&
                 <dialog id="my_modal_1" className="modal">
-                    <div className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">Press ESC key or click the button below to close</p>
+                    <div className="modal-box flex flex-col items-center justify-center space-y-3">
+                        <img src={successfulIcon} alt="" />
+                        <h1 className='text-2xl font-bold'>Payment Successful</h1>
+                        <hr className='w-full text-gray-200' />
+
+                        <p className='text-[17px] text-[#6b6b6f]'>Thanks for Purchasing</p>
+                        <p className='text-[17px] text-[#6b6b6f]'> Total:{total.toFixed(2)}</p>
                         <div className="modal-action">
+
                             <form method="dialog">
-                                <button className="btn">Close</button>
+                                <Link to={"/category/all"}><button onClick={closeModal} className="btn">Close</button></Link>
                             </form>
                         </div>
                     </div>
