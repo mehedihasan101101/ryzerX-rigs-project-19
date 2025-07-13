@@ -39,8 +39,9 @@ Component Architecture: Clean separation of concerns with reusable components an
 Responsive & Accessible: All pages and components adapt to any screen size and follow accessibility best practices.
 
 📢 Acknowledgements
-React
-React Router
-Tailwind CSS
-DaisyUI
-Vite
+
+- **React**
+- **React Router**
+- **Tailwind CSS**
+- **DaisyUI**
+- **Vite**
