@@ -42,7 +42,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
     }
     return (
         // Main navigation bar
-        <nav className={`lg:py-7 py-5  bg-transparent pr-2 mt-2 `}>
+        <nav className={`lg:py-8 py-5   bg-transparent pr-2 mt-2  `}>
 
             <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2 md:px-4">
                 {/* Mobile Menu Toggle Icon */}
@@ -57,7 +57,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                 <Link><h1 className="font-extrabold text-xl text-black ">RyzerX</h1></Link>
                 {/* Navigation Links */}
                 <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-0 h-screen z-40 bg-neutral-100/90 lg:bg-transparent   absolute `}>
-                    <ul className="lg:flex gap-7 mt-19 lg:bg-transparent text-[#6b6b6f]">
+                    <ul className="lg:flex gap-7 lg:mt-0 mt-19 lg:bg-transparent text-[#6b6b6f]">
                         {navFields.map((field) => <NavLink key={field.id} to={field.path} className={({ isActive }) => `rounded px-3 py-2 block ${isActive ? "text-white bg-black" :
                             " hover:bg-neutral-100"}`}>{field.name}</NavLink>)}
                     </ul>
