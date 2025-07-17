@@ -33,13 +33,20 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
         { id: 3, path: "/Dashboard", name: "Dashboard" },
         { id: 4, path: "/AboutUs", name: "About Us" },
     ]
+
+    if (open) {
+        document.body.classList.add("overflow-hidden")
+    }
+    else {
+        document.body.classList.remove("overflow-hidden")
+    }
     return (
         // Main navigation bar
         <nav className={`lg:py-7 py-5  bg-transparent pr-2 mt-2 `}>
 
             <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2 md:px-4">
                 {/* Mobile Menu Toggle Icon */}
-                <div className="lg:hidden">
+                <div className="lg:hidden z-50">
 
                     {
                         open ? <RxCross1 onClick={() => setOpen(!open)} className="text-3xl"></RxCross1> : <IoIosMenu onClick={() => setOpen(!open)} className="text-3xl"></IoIosMenu>
@@ -49,8 +56,8 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
                 {/* Website Main LOGO */}
                 <Link><h1 className="font-extrabold text-xl text-black ">RyzerX</h1></Link>
                 {/* Navigation Links */}
-                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-22 h-screen z-50 bg-neutral-100/90 lg:bg-transparent   absolute `}>
-                    <ul className="lg:flex gap-7 lg:bg-transparent text-[#6b6b6f]">
+                <div className={` ${open ? "left-0" : "left-[-500px]"} duration-700  lg:static lg:block  lg:w-auto lg:h-auto md:w-[30%] w-[45%] top-0 h-screen z-40 bg-neutral-100/90 lg:bg-transparent   absolute `}>
+                    <ul className="lg:flex gap-7 mt-19 lg:bg-transparent text-[#6b6b6f]">
                         {navFields.map((field) => <NavLink key={field.id} to={field.path} className={({ isActive }) => `rounded px-3 py-2 block ${isActive ? "text-white bg-black" :
                             " hover:bg-neutral-100"}`}>{field.name}</NavLink>)}
                     </ul>
