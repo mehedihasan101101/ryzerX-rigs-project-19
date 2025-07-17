@@ -42,7 +42,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
     }
     return (
         // Main navigation bar
-        <nav className={`lg:py-8 py-5   bg-transparent pr-2 mt-2  `}>
+        <nav className={`lg:py-6 py-5   bg-transparent pr-2 mt-2  `}>
 
             <div className="lg:max-w-[90%] m-auto flex justify-between items-center px-2 md:px-4">
                 {/* Mobile Menu Toggle Icon */}
