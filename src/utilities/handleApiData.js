@@ -7,7 +7,7 @@ async function handleApiData({ params }) {
     const res = await fetch("/allproduct.json");
     const allproduct = await res.json();
 
-    if (categoryname !== "all") { // If category is 'all', return all products
+    if (categoryname !== "all" && categoryname) { // If category is 'all', return all products
         const filteredProducts = allproduct.filter(eachProduct => eachProduct.category.toUpperCase() === categoryname.toUpperCase())
         return filteredProducts
     }
@@ -15,6 +15,8 @@ async function handleApiData({ params }) {
 
         return allproduct;
     }
+
+
 
 }
 
