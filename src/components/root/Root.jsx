@@ -49,6 +49,7 @@ const Root = () => {
         <>
             <cartContext.Provider value={{ setCartItems, cartItems, setTotal, wishList, setWishList, total, deletefromCart, dashboardCart, setDashboardCart }}>
                 <NavBar deletefromCart={deletefromCart} cartItems={cartItems} total={total} wishList={wishList}></NavBar>
+                
                 <Outlet></Outlet>
 
                 <Footer ></Footer>

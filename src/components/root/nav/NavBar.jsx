@@ -28,7 +28,7 @@ const NavBar = ({ cartItems, total, wishList, deletefromCart }) => {
 
     // Navigation fields for the navbar links
     const navFields = [
-        { id: 1, path: "category/all", name: "Home" },
+        { id: 1, path: "/home", name: "Home" },
         { id: 2, path: "/Statistics", name: "Statistics" },
         { id: 3, path: "/Dashboard", name: "Dashboard" },
         { id: 4, path: "/AboutUs", name: "About Us" },
