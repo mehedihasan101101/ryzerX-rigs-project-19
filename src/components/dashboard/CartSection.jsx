@@ -61,7 +61,7 @@ const CartSection = () => {
                         <div className="modal-action">
 
                             <form method="dialog">
-                                <Link to={"/category/all"}><button onClick={closeModal} className="btn">Close</button></Link>
+                                <Link to={"/home/category/all"}><button onClick={closeModal} className="btn">Close</button></Link>
                             </form>
                         </div>
                     </div>

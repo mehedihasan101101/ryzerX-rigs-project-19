@@ -24,8 +24,12 @@ const router = createBrowserRouter([
   {
     path: "",
     element: <Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        index: true,
+        element: <Navigate to="home" replace />
+      },
       {
         path: "home",
         element: <Home></Home>,
@@ -42,7 +46,7 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: "category/:categoryname/:productId",
+        path: "home/category/:categoryname/:productId",
         element: <SingleProductPage></SingleProductPage>,
         loader: handleApiData
 
